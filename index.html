@@ -35,12 +35,12 @@
                         <li class="nav-item"><a class="nav-link enlace-menu" href="#nosotros">Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link enlace-menu" href="#servicios">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link enlace-menu" href="#proceso">Cómo trabajamos</a></li>
-                        <li class="nav-item"><a class="nav-link enlace-menu" href="#contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link enlace-menu" href="pages/Contacto.html">Contacto</a></li>
                     </ul>
                     <!-- Abre WhatsApp con un mensaje ya escrito.
                          wa.me/ + 52 + número a 10 dígitos, sin espacios ni signo + -->
-                    <a href="https://wa.me/525554030877?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta" class="telefono-pill" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp al +52 55 5403 0877">
-                        <i class="bi bi-whatsapp"></i> +52 55 5403 0877
+                    <a href="https://wa.me/525554030877?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta" class="boton-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp" title="Escríbenos por WhatsApp">
+                        <i class="bi bi-whatsapp" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -58,16 +58,6 @@
                         <div class="hero-botones">
                             <a href="#contacto" class="btn-primario">Agenda una consulta</a>
                             <a href="#servicios" class="btn-secundario"><i class="bi bi-arrow-down-circle-fill"></i> Ver servicios</a>
-                        </div>
-                        <div class="prueba-social">
-                            <div class="avatares">
-                                <!-- Placeholders para avatares -->
-                                <div class="avatar">T</div>
-                                <div class="avatar">A</div>
-                                <div class="avatar">G</div>
-                                <div class="avatar">G</div>
-                            </div>
-                            <p class="prueba-texto">Más de 20 años respaldando a empresas y particulares</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -122,7 +112,6 @@
                     <div class="col-lg-4 servicios-intro">
                         <h2 class="titulo-seccion-oscura">Nuestros Servicios</h2>
                         <p class="texto-seccion-oscura">Atención legal integral para proteger a tu empresa, tu patrimonio y tu familia.</p>
-                        <a href="#contacto" class="btn-primario">Agenda una consulta</a>
                     </div>
                     <div class="col-lg-8">
                         <!-- 4 servicios: cuadrícula de 2 x 2 (col-md-6) -->
@@ -132,7 +121,7 @@
                                     <div class="servicio-icono"><i class="bi bi-bank2"></i></div>
                                     <h3 class="servicio-titulo">Defensa Fiscal y Administrativa</h3>
                                     <p class="servicio-texto">Acompañamiento en auditorías del IMSS, INFONAVIT y SAT, impugnación de liquidaciones, juicio de nulidad, amparos fiscales, levantamiento de embargos y devolución de impuestos.</p>
-                                    <a href="#contacto" class="servicio-link">Más información →</a>
+                                    <a href="pages/defensa-fiscal-administrativa.html" class="servicio-link">Más información →</a>
                                 </article>
                             </div>
                             <div class="col-md-6">
@@ -140,7 +129,7 @@
                                     <div class="servicio-icono"><i class="bi bi-people-fill"></i></div>
                                     <h3 class="servicio-titulo">Defensa Civil y Familiar</h3>
                                     <p class="servicio-texto">Asesoría en contratos, prescripciones, testamentos, intestados, divorcios, pensiones alimenticias y reconocimientos de paternidad.</p>
-                                    <a href="#contacto" class="servicio-link">Más información →</a>
+                                    <a href="pages/defensa-civil-familiar.html" class="servicio-link">Más información →</a>
                                 </article>
                             </div>
                             <div class="col-md-6">
@@ -148,7 +137,7 @@
                                     <div class="servicio-icono"><i class="bi bi-file-earmark-text-fill"></i></div>
                                     <h3 class="servicio-titulo">Defensa Mercantil</h3>
                                     <p class="servicio-texto">Cobro extrajudicial y judicial de cheques, pagarés y facturas, así como ejecución de contratos comerciales.</p>
-                                    <a href="#contacto" class="servicio-link">Más información →</a>
+                                    <a href="pages/defensa-mercantil.html" class="servicio-link">Más información →</a>
                                 </article>
                             </div>
                             <div class="col-md-6">
@@ -156,7 +145,7 @@
                                     <div class="servicio-icono"><i class="bi bi-clipboard-check-fill"></i></div>
                                     <h3 class="servicio-titulo">Compliance</h3>
                                     <p class="servicio-texto">Cumplimiento normativo empresarial para prevenir riesgos, sanciones e infracciones operativas.</p>
-                                    <a href="#contacto" class="servicio-link">Más información →</a>
+                                    <a href="pages/compliance.html" class="servicio-link">Más información →</a>
                                 </article>
                             </div>
                         </div>
@@ -195,23 +184,88 @@
             </div>
         </section>
 
-        <!-- CTA -->
-        <section class="seccion-clara">
+        <!-- CONTACTO / FORMULARIO -->
+        <section id="contacto" class="seccion-contacto">
             <div class="container">
-                <div class="cta-banner">
-                    <div class="cta-icono"><i class="bi bi-calendar-check-fill"></i></div>
-                    <div class="cta-texto">
-                        <h2 class="cta-titulo">Prevenir siempre cuesta menos que litigar.</h2>
-                        <p class="cta-sub">Agenda una consulta con nuestro equipo jurídico.</p>
+                <div class="contacto-panel">
+                    <div class="row g-5 align-items-start">
+
+                        <div class="col-lg-5">
+                            <h2 class="contacto-titulo">Prevenir siempre cuesta menos que litigar.</h2>
+                            <p class="contacto-texto">Cuéntenos su caso y un especialista lo contactará en las próximas 24 horas hábiles.</p>
+                            <ul class="contacto-lista">
+                                <li><i class="bi bi-whatsapp"></i> <a href="https://wa.me/525554030877" target="_blank" rel="noopener noreferrer">+52 55 5403 0877</a></li>
+                                <li><i class="bi bi-clock"></i> Lunes a viernes, 9:00 a 18:00</li>
+                                <li><i class="bi bi-shield-lock"></i> Su información es confidencial</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <!-- FormSubmit envía cada solicitud al correo del action.
+                                 El primer envío manda un correo de activación a esa dirección: hay que confirmarlo una vez. -->
+                            <form class="formulario" action="https://formsubmit.co/consorciojuridicotaggs@gmail.com" method="POST">
+                                <!-- Opciones de FormSubmit (no se muestran) -->
+                                <input type="hidden" name="_subject" value="Nueva solicitud desde el sitio web de TAGGS">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="text" name="_honey" class="campo-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="nombre">Nombre</label>
+                                        <input class="form-control" type="text" id="nombre" name="Nombre" placeholder="Nombre completo" autocomplete="name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="empresa">Empresa <span class="opcional">(opcional)</span></label>
+                                        <input class="form-control" type="text" id="empresa" name="Empresa" placeholder="Empresa" autocomplete="organization">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="cargo">Cargo <span class="opcional">(opcional)</span></label>
+                                        <input class="form-control" type="text" id="cargo" name="Cargo" placeholder="Cargo" autocomplete="organization-title">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="telefono">Teléfono</label>
+                                        <input class="form-control" type="tel" id="telefono" name="Teléfono" placeholder="10 dígitos" autocomplete="tel" inputmode="tel" pattern="[0-9 +()-]{10,}" title="Escriba al menos 10 dígitos" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label" for="correo">Correo</label>
+                                        <input class="form-control" type="email" id="correo" name="email" placeholder="nombre@correo.com" autocomplete="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label" for="servicio">Servicio de interés</label>
+                                        <select class="form-select" id="servicio" name="Servicio" required>
+                                            <option value="" selected disabled>Seleccione una opción</option>
+                                            <option>Defensa Fiscal y Administrativa</option>
+                                            <option>Defensa Civil y Familiar</option>
+                                            <option>Defensa Mercantil</option>
+                                            <option>Compliance</option>
+                                            <option>Otro / No estoy seguro</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label" for="mensaje">Cuéntenos brevemente su caso <span class="opcional">(opcional)</span></label>
+                                        <textarea class="form-control" id="mensaje" name="Mensaje" rows="4" placeholder="Describa su situación en pocas líneas"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="privacidad" required>
+                                            <label class="form-check-label" for="privacidad">He leído y acepto el <a href="pages/aviso-privacidad.html" target="_blank">Aviso de Privacidad</a>.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn-enviar" type="submit">Enviar solicitud <i class="bi bi-send-fill"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
-                    <a href="#contacto" class="btn-cta">Quiero agendar una consulta</a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer id="contacto" class="pie-pagina">
+    <footer class="pie-pagina">
         <div class="container">
             <h2 class="footer-encabezado">Síguenos</h2>
             <div class="row g-4">
