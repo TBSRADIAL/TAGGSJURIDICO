@@ -1,0 +1,26 @@
+// ==========================================================================
+//  CONSORCIO JURÍDICO EMPRESARIAL TAGGS — Hoja de estilos (SCSS)
+//
+//  Este archivo solo importa los módulos. NO edites styles/style.css a mano:
+//  se genera desde aquí con
+//      npm run sass        (compila una vez)
+//      npm run sass:watch  (recompila al guardar)
+// ==========================================================================
+
+// 1. Base: reset, variables CSS, tipografía general
+@use 'base/base';
+
+// 2. Estructura general
+@use 'layout/navbar';
+@use 'layout/secciones';
+@use 'layout/footer';
+
+// 3. Componentes reutilizables
+@use 'components/botones';
+@use 'components/formulario';
+
+// 4. Estilos por página
+@use 'pages/inicio';
+@use 'pages/contacto';
+@use 'pages/servicio';
+@use 'pages/legal';

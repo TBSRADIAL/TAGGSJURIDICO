@@ -1,0 +1,98 @@
+// ==========================================================================
+//  Mixins
+// ==========================================================================
+@use 'sass:map';
+@use 'sass:list';
+@use 'variables' as *;
+
+// --- Responsivo ---------------------------------------------------------
+// @include hasta(sm) { ... }   →  @media (max-width: 575px)
+@mixin hasta($bp) {
+    @media (max-width: map.get($breakpoints, $bp)) { @content; }
+}
+
+// @include desde(lg) { ... }   →  @media (min-width: 992px)
+@mixin desde($bp) {
+    @media (min-width: map.get($breakpoints, $bp)) { @content; }
+}
+
+// --- Estados ------------------------------------------------------------
+// Aplica el mismo estilo a :hover y :focus
+@mixin hover-focus {
+    &:hover,
+    &:focus { @content; }
+}
+
+// Igual, pero con :focus-visible (solo teclado)
+@mixin hover-focus-visible {
+    &:hover,
+    &:focus-visible { @content; }
+}
+
+// --- Transiciones -------------------------------------------------------
+// @include transicion(color, transform)  →  color 0.2s ease, transform 0.2s ease
+@mixin transicion($props...) {
+    $lista: ();
+    @each $p in $props {
+        $lista: list.append($lista, $p $vel ease, comma);
+    }
+    transition: $lista;
+}
+
+// --- Layout -------------------------------------------------------------
+@mixin flex-centro($display: flex) {
+    display: $display;
+    align-items: center;
+    justify-content: center;
+}
+
+// Lista sin viñetas ni márgenes
+@mixin lista-limpia {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+// --- Componentes repetidos ----------------------------------------------
+// Caja (o círculo) de color con un ícono centrado.
+// Se usa en razones, servicios, oficinas, detalles, footer, etc.
+@mixin caja-icono(
+    $tam,
+    $radio: 50%,
+    $fuente: null,
+    $fondo: var(--color-acento-claro),
+    $color: var(--color-primario)
+) {
+    width: $tam;
+    height: $tam;
+    flex-shrink: 0;
+    border-radius: $radio;
+    background-color: $fondo;
+    color: $color;
+    @include flex-centro;
+    font-size: $fuente;
+}
+
+// Botón sólido base (primario, enviar, aside)
+@mixin boton-solido($fondo, $color) {
+    background-color: $fondo;
+    color: $color;
+    font-family: var(--fuente-titulos);
+    border: none;
+    border-radius: 8px;
+}
+
+// Etiqueta pequeña en mayúsculas
+@mixin etiqueta($tam, $espaciado: 0.06em) {
+    font-size: $tam;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: $espaciado;
+}
+
+// Rango entre dos puntos: @include entre(lg, xl) → 992px a 1199px
+@mixin entre($min, $max) {
+    @media (min-width: map.get($breakpoints, $min)) and (max-width: map.get($breakpoints, $max)) {
+        @content;
+    }
+}

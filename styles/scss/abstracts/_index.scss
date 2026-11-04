@@ -1,0 +1,4 @@
+// Punto de entrada de las herramientas: cada parcial hace
+// @use '../abstracts' as *; y tiene acceso a variables y mixins.
+@forward 'variables';
+@forward 'mixins';

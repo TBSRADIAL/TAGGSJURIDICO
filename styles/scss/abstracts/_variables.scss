@@ -1,0 +1,40 @@
+// ==========================================================================
+//  Variables
+//  Colores: blanco (fondo), rojo (primario), vino (acento)
+// ==========================================================================
+
+// Paleta: con este mapa se generan las variables CSS --color-* en :root.
+// Los tonos azules de la versión anterior se cambiaron por neutros cálidos.
+$colores: (
+    'fondo':        #FFFFFF,
+    'superficie':   #FBF5F4,
+    'primario':     #9a0000,
+    'texto':        #221B1B,
+    'texto-suave':  #6B5F5F,
+    'acento':       #5e110a,
+    'acento-claro': #F8E8E6,   // fondo de los círculos de íconos
+    'borde':        #EDE3E2,
+    'texto-claro':  #F2D6D3,   // texto secundario sobre fondo rojo
+);
+
+$fuentes: (
+    'titulos': ('Sora', sans-serif),
+    'texto':   ('Inter', sans-serif),
+);
+
+// Colores fijos que no cambian con el tema
+$blanco: #FFFFFF;
+$whatsapp: #25D366;            // verde oficial de WhatsApp
+$whatsapp-hover: #1DA851;
+$placeholder: #9A8E8E;
+
+// Velocidad estándar de las transiciones
+$vel: 0.2s;
+
+// Puntos de quiebre (iguales a los de Bootstrap)
+$breakpoints: (
+    'sm': 575px,    // celulares
+    'md': 991px,    // tablets
+    'lg': 992px,    // laptops en adelante
+    'xl': 1199px,
+);

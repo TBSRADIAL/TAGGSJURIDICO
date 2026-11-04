@@ -1,0 +1,67 @@
+// ==========================================================================
+//  Páginas legales (Aviso de privacidad, Términos)
+// ==========================================================================
+@use '../abstracts' as *;
+
+.pagina-legal {
+    padding: 3rem 0 4.5rem;
+    background-color: var(--color-superficie);
+}
+
+// Tarjeta blanca con ancho de lectura cómodo (unas 75 letras por línea)
+.legal {
+    max-width: 75ch;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    padding: 3rem;
+
+    @include hasta(sm) { padding: 1.8rem 1.3rem; }
+
+    &-titulo {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+
+        @include hasta(sm) { font-size: 1.7rem; }
+    }
+
+    &-fecha {
+        color: var(--color-texto-suave);
+        font-size: 0.9rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--color-borde);
+    }
+
+    h2 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin: 2.2rem 0 0.8rem;
+    }
+
+    p,
+    li {
+        color: var(--color-texto);
+        font-size: 0.97rem;
+    }
+
+    p { margin-bottom: 1rem; }
+
+    ul {
+        padding-left: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    li {
+        margin-bottom: 0.4rem;
+
+        &::marker { color: var(--color-primario); }
+    }
+
+    a {
+        color: var(--color-primario);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+}

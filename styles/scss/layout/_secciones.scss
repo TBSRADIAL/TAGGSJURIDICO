@@ -1,0 +1,28 @@
+// ==========================================================================
+//  Secciones clara / oscura (bandas alternas)
+// ==========================================================================
+@use '../abstracts' as *;
+
+.seccion-clara {
+    background-color: var(--color-fondo);
+
+    // Evita el doble espacio cuando dos secciones claras van seguidas
+    & + & { padding-top: 0; }
+}
+
+.seccion-oscura {
+    background-color: var(--color-primario);
+    color: $blanco;
+}
+
+.titulo-seccion-oscura {
+    color: $blanco;
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+}
+
+.texto-seccion-oscura {
+    color: var(--color-texto-claro);
+    margin-bottom: 0;
+    max-width: 40ch;
+}

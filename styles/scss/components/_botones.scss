@@ -1,0 +1,118 @@
+// ==========================================================================
+//  Botones y enlaces de acción
+// ==========================================================================
+@use '../abstracts' as *;
+
+.btn-primario {
+    display: inline-block;
+    @include boton-solido(var(--color-primario), $blanco);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.6rem;
+    transition: background-color $vel ease, color $vel ease, transform 0.15s ease;
+
+    @include hover-focus {
+        background-color: var(--color-acento);
+        color: $blanco;
+    }
+
+    &:active { transform: scale(0.97); }
+
+    // Sobre la sección roja el botón rojo no se veía: aquí se invierte
+    .seccion-oscura & {
+        background-color: $blanco;
+        color: var(--color-primario);
+
+        @include hover-focus {
+            background-color: var(--color-acento-claro);
+            color: var(--color-acento);
+        }
+    }
+}
+
+.btn-secundario {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-texto);
+    @include transicion(color);
+
+    i {
+        font-size: 1.6rem;
+        color: var(--color-primario);
+        @include transicion(transform);
+    }
+
+    @include hover-focus { color: var(--color-primario); }
+
+    // La flecha de "Ver servicios" baja un poco al pasar el cursor
+    &:hover i,
+    &:focus i { transform: translateY(3px); }
+}
+
+// Botón blanco del formulario (sobre el panel rojo)
+.btn-enviar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    @include boton-solido($blanco, var(--color-primario));
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+    transition: background-color $vel ease, color $vel ease, transform 0.15s ease;
+
+    @include hover-focus-visible {
+        background-color: var(--color-acento);
+        color: $blanco;
+    }
+
+    &:active { transform: scale(0.97); }
+
+    @include hasta(sm) {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+// Botón de la tarjeta lateral en páginas de servicio
+.btn-aside {
+    display: block;
+    text-align: center;
+    @include boton-solido(var(--color-primario), $blanco);
+    font-weight: 600;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.9rem;
+    @include transicion(background-color);
+
+    @include hover-focus {
+        background-color: var(--color-acento);
+        color: $blanco;
+    }
+}
+
+// Enlace "← Volver"
+.volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-primario);
+    margin-bottom: 1.5rem;
+    @include transicion(gap);
+
+    @include hover-focus {
+        gap: 0.7rem;
+        color: var(--color-acento);
+    }
+
+    // Variante clara para la cabecera roja de servicios
+    &.volver-claro {
+        color: var(--color-texto-claro);
+
+        @include hover-focus { color: $blanco; }
+    }
+}

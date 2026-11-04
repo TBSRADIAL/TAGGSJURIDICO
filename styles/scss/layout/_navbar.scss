@@ -1,0 +1,114 @@
+// ==========================================================================
+//  Navbar
+// ==========================================================================
+@use '../abstracts' as *;
+
+.encabezado {
+    padding: 1rem 0;
+    background-color: var(--color-fondo);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+// Logo a la izquierda, nombre y eslogan apilados a la derecha.
+// Funciona igual con o sin el <img class="marca-logo">.
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    &-logo {
+        height: 42px;
+        width: auto;
+
+        @include hasta(sm) { height: 34px; }
+    }
+
+    &-textos {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+    }
+
+    // "TAGGS" es corto: un poco de espaciado entre letras le da presencia
+    &-nombre {
+        font-family: var(--fuente-titulos);
+        font-weight: 800;
+        font-size: 1.35rem;
+        letter-spacing: 0.08em;
+        color: var(--color-primario);
+
+        @include hasta(sm) { font-size: 1.15rem; }
+    }
+
+    &-tagline {
+        @include etiqueta(0.62rem);
+        color: var(--color-texto-suave);
+
+        @include hasta(sm) { font-size: 0.55rem; }
+    }
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    list-style: none;
+
+    // Laptops (992–1199px): el menú se compacta para que quepa
+    @include entre(lg, xl) { gap: 1rem; }
+
+    // Tablets y celulares: menú colapsado en columna
+    @include hasta(md) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+}
+
+.enlace-menu {
+    font-family: var(--fuente-texto);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-texto);
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    @include transicion(color, border-color);
+
+    @include entre(lg, xl) { font-size: 0.9rem; }
+
+    // Se antepone .menu para superar la especificidad de
+    // .navbar-nav .nav-link.active de Bootstrap
+    .menu &.active,
+    .menu &:hover,
+    .menu &:focus {
+        color: var(--color-primario);
+        border-bottom-color: var(--color-primario);
+    }
+}
+
+// Botón circular de WhatsApp en el menú (solo el logo)
+.boton-whatsapp {
+    @include caja-icono(44px, 50%, 1.35rem, $whatsapp, $blanco);
+    display: inline-flex;
+    margin-left: 1.5rem;
+    transition: background-color $vel ease, transform 0.15s ease;
+
+    @include hover-focus {
+        background-color: $whatsapp-hover;
+        color: $blanco;
+        transform: scale(1.06);
+    }
+
+    &:focus-visible {
+        outline: 3px solid var(--color-primario);
+        outline-offset: 2px;
+    }
+
+    @include entre(lg, xl) { margin-left: 1rem; }
+
+    @include hasta(md) {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,157 @@
+// ==========================================================================
+//  Página de contacto (oficinas y datos)
+// ==========================================================================
+@use '../abstracts' as *;
+
+.pagina-contacto {
+    padding: 3rem 0 4.5rem;
+}
+
+.contacto-encabezado {
+    max-width: 60ch;
+    margin-bottom: 2.5rem;
+}
+
+.contacto-pagina-titulo {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+
+    @include hasta(sm) { font-size: 1.9rem; }
+}
+
+.contacto-pagina-texto {
+    color: var(--color-texto-suave);
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+
+// Franja final que invita a usar el formulario
+.contacto-cierre {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-borde);
+
+    p {
+        font-family: var(--fuente-titulos);
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--color-texto);
+        margin-bottom: 0;
+    }
+}
+
+// --- Tarjetas de dirección ----------------------------------------------
+.tarjeta-oficina {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-top: 4px solid var(--color-primario);
+    border-radius: 12px;
+    padding: 1.8rem;
+    @include transicion(box-shadow, transform);
+
+    &:hover,
+    &:focus-within {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(60, 10, 10, 0.12);
+    }
+
+    @include hasta(sm) { padding: 1.4rem; }
+}
+
+.oficina-icono,
+.dato-icono {
+    @include caja-icono(48px, 50%, 1.3rem);
+}
+
+.oficina {
+    &-icono { margin-bottom: 1rem; }
+
+    &-titulo {
+        font-size: 1.15rem;
+        margin-bottom: 0.6rem;
+    }
+
+    // <address> viene en cursiva por defecto: se quita
+    &-direccion {
+        font-style: normal;
+        color: var(--color-texto-suave);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
+
+    &-mapa {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--color-primario);
+
+        i { font-size: 0.8rem; }
+
+        @include hover-focus {
+            color: var(--color-acento);
+            text-decoration: underline;
+        }
+    }
+}
+
+// --- Tarjetas de teléfono y correo (fondo suave, horizontales) ----------
+.tarjeta-dato {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    height: 100%;
+    background-color: var(--color-superficie);
+    border-radius: 12px;
+    padding: 1.5rem 1.8rem;
+
+    @include hasta(sm) { padding: 1.4rem; }
+}
+
+.dato {
+    &-etiqueta {
+        @include etiqueta(0.8rem);
+        color: var(--color-texto-suave);
+        margin-bottom: 0.2rem;
+    }
+
+    &-valor {
+        display: block;
+        font-family: var(--fuente-titulos);
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: var(--color-texto);
+        overflow-wrap: anywhere;
+        margin-bottom: 0.3rem;
+
+        @include hover-focus { color: var(--color-primario); }
+    }
+
+    &-extra {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.88rem;
+        color: var(--color-texto-suave);
+        margin-bottom: 0;
+
+        @at-root a#{&} {
+            color: var(--color-primario);
+            font-weight: 600;
+
+            @include hover-focus { text-decoration: underline; }
+        }
+    }
+}

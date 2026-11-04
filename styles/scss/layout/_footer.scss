@@ -1,0 +1,101 @@
+// ==========================================================================
+//  Pie de página
+// ==========================================================================
+@use '../abstracts' as *;
+
+.pie-pagina {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 3.5rem 0 1.5rem;
+}
+
+.footer-encabezado {
+    color: $blanco;
+    font-size: 1.2rem;
+    margin-bottom: 1.4rem;
+}
+
+.footer-titulo {
+    color: $blanco;
+    font-size: 1rem;
+}
+
+// --- Redes sociales: toda la tarjeta (logo + nombre) es un solo enlace ---
+.red-social {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--color-texto-claro);
+
+    // Al pasar el cursor, el círculo se vuelve blanco y sube un poco
+    &:hover .red-icono,
+    &:focus-visible .red-icono {
+        background-color: $blanco;
+        transform: translateY(-3px);
+    }
+}
+
+// Círculo blanco translúcido detrás de cada logo
+.red-icono {
+    @include caja-icono(46px, 50%, 1.3rem, rgba($blanco, 0.12), $blanco);
+    @include transicion(background-color, transform);
+
+    // Tamaño de los logos PNG dentro del círculo
+    img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+}
+
+.red-datos {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.3;
+
+    .footer-titulo {
+        font-family: var(--fuente-titulos);
+        font-weight: 700;
+    }
+}
+
+// opacity: 1 anula el opacity: .25 que Bootstrap pone a los <hr>
+.footer-linea {
+    border-color: rgba($blanco, 0.2);
+    opacity: 1;
+    margin: 2.5rem 0 1.5rem;
+}
+
+.footer-inferior {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    @include hasta(sm) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.footer-legal {
+    @include lista-limpia;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.4rem;
+}
+
+.enlace-legal {
+    color: var(--color-texto-claro);
+    font-size: 0.85rem;
+    @include transicion(color);
+
+    @include hover-focus { color: $blanco; }
+}

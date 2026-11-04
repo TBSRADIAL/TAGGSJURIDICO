@@ -1,0 +1,70 @@
+// ==========================================================================
+//  Formulario de contacto (sobre el panel rojo)
+// ==========================================================================
+@use '../abstracts' as *;
+
+$halo-foco: 0 0 0 3px rgba($blanco, 0.45);
+
+.formulario {
+    // Etiquetas blancas sobre el fondo rojo
+    .form-label,
+    .form-check-label {
+        color: $blanco;
+        font-weight: 500;
+        font-size: 0.92rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .opcional {
+        color: var(--color-texto-claro);
+        font-weight: 400;
+        font-size: 0.8rem;
+    }
+
+    .form-control,
+    .form-select {
+        border: 2px solid transparent;
+        border-radius: 8px;
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+        color: var(--color-texto);
+
+        // Foco visible: borde vino + halo blanco (reemplaza el azul de Bootstrap)
+        &:focus {
+            border-color: var(--color-acento);
+            box-shadow: $halo-foco;
+        }
+    }
+
+    .form-control::placeholder { color: $placeholder; }
+
+    textarea.form-control {
+        resize: vertical;
+        min-height: 110px;
+    }
+
+    // Casilla del aviso de privacidad
+    .form-check-input {
+        border: none;
+        width: 1.15em;
+        height: 1.15em;
+
+        &:checked { background-color: var(--color-acento); }
+        &:focus { box-shadow: $halo-foco; }
+    }
+
+    .form-check-label a {
+        color: $blanco;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+}
+
+// Campo trampa contra bots: invisible para personas
+.campo-trampa {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}

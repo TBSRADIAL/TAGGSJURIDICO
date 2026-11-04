@@ -1,0 +1,64 @@
+// ==========================================================================
+//  Base: reset, variables CSS y estilos generales
+// ==========================================================================
+@use '../abstracts' as *;
+
+// Bootstrap ya incluye su propio "Reboot"; aquí solo dejamos box-sizing
+// por claridad.
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+// Variables CSS generadas desde los mapas de _variables.scss
+:root {
+    @each $nombre, $valor in $colores {
+        --color-#{$nombre}: #{$valor};
+    }
+
+    @each $nombre, $valor in $fuentes {
+        --fuente-#{$nombre}: #{$valor};
+    }
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-texto);
+    line-height: 1.65;
+}
+
+a {
+    color: var(--color-acento);
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario);
+    line-height: 1.25;
+}
+
+section {
+    padding: 4.5rem 0;
+}
+
+.titulo-central {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+
+    @include hasta(sm) { font-size: 1.6rem; }
+}
+
+// Movimiento reducido: respeta a quien desactivó las animaciones
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
