@@ -909,6 +909,38 @@ a.dato-extra:hover, a.dato-extra:focus {
   text-decoration: underline;
 }
 
+.gracias {
+  display: flex;
+  align-items: center;
+  min-height: 55vh;
+}
+.gracias-contenido {
+  max-width: 60ch;
+  margin: 0 auto;
+  text-align: center;
+}
+.gracias-icono {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--color-acento-claro);
+  color: var(--color-primario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1.5rem;
+}
+.gracias-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
 .servicio-cabecera {
   background-color: var(--color-primario);
   color: #FFFFFF;

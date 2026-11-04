@@ -155,3 +155,30 @@
         }
     }
 }
+
+// --- Página de agradecimiento (tras enviar el formulario) ----------------
+.gracias {
+    display: flex;
+    align-items: center;
+    min-height: 55vh;
+
+    &-contenido {
+        max-width: 60ch;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &-icono {
+        @include caja-icono(72px, 50%, 2rem);
+        margin: 0 auto 1.5rem;
+    }
+
+    &-acciones {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        margin-top: 1.8rem;
+    }
+}

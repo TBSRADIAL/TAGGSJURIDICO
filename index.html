@@ -202,11 +202,14 @@
 
                         <div class="col-lg-7">
                             <!-- FormSubmit envía cada solicitud al correo del action.
-                                 El primer envío manda un correo de activación a esa dirección: hay que confirmarlo una vez. -->
+                                 El primer envío manda un correo de activación a esa dirección: hay que confirmarlo una vez.
+                                 Tras enviar, redirige a pages/gracias.html (_next debe ser URL absoluta). -->
                             <form class="formulario" action="https://formsubmit.co/consorciojuridicotaggs@gmail.com" method="POST">
                                 <!-- Opciones de FormSubmit (no se muestran) -->
                                 <input type="hidden" name="_subject" value="Nueva solicitud desde el sitio web de TAGGS">
                                 <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_next" value="https://tbsradial.github.io/TAGGSJURIDICO/pages/gracias.html">
+                                <input type="hidden" name="_captcha" value="false">
                                 <input type="text" name="_honey" class="campo-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
 
                                 <div class="row g-3">
@@ -224,7 +227,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label" for="telefono">Teléfono</label>
-                                        <input class="form-control" type="tel" id="telefono" name="Teléfono" placeholder="10 dígitos" autocomplete="tel" inputmode="tel" pattern="[0-9 +()-]{10,}" title="Escriba al menos 10 dígitos" required>
+                                        <input class="form-control" type="tel" id="telefono" name="Telefono" placeholder="10 dígitos" autocomplete="tel" inputmode="tel" pattern="\+?(?:[ \(\)\-]*[0-9]){10,}[ \(\)\-]*" title="Escriba al menos 10 dígitos (puede incluir +, espacios, guiones o paréntesis)" required>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label" for="correo">Correo</label>
@@ -247,7 +250,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="privacidad" required>
+                                            <input class="form-check-input" type="checkbox" id="privacidad" name="Aviso de privacidad" value="Aceptado" required>
                                             <label class="form-check-label" for="privacidad">He leído y acepto el <a href="pages/aviso-privacidad.html" target="_blank">Aviso de Privacidad</a>.</label>
                                         </div>
                                     </div>
