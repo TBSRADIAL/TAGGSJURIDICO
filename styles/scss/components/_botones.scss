@@ -71,6 +71,13 @@
 
     &:active { transform: scale(0.97); }
 
+    // Mientras se envía (scripts/formulario.js)
+    &:disabled {
+        opacity: 0.75;
+        cursor: wait;
+        transform: none;
+    }
+
     @include hasta(sm) {
         width: 100%;
         justify-content: center;

@@ -203,12 +203,13 @@
                         <div class="col-lg-7">
                             <!-- FormSubmit envía cada solicitud al correo del action.
                                  El primer envío manda un correo de activación a esa dirección: hay que confirmarlo una vez.
-                                 Tras enviar, redirige a pages/gracias.html (_next debe ser URL absoluta). -->
-                            <form class="formulario" action="https://formsubmit.co/consorciojuridicotaggs@gmail.com" method="POST">
+                                 Con JavaScript (scripts/formulario.js) se envía por AJAX y redirige a pages/gracias.html
+                                 con ruta relativa (no depende del dominio). Sin JavaScript, el envío normal
+                                 termina en la página de FormSubmit. -->
+                            <form class="formulario" id="form-contacto" action="https://formsubmit.co/consorciojuridicotaggs@gmail.com" method="POST">
                                 <!-- Opciones de FormSubmit (no se muestran) -->
                                 <input type="hidden" name="_subject" value="Nueva solicitud desde el sitio web de TAGGS">
                                 <input type="hidden" name="_template" value="table">
-                                <input type="hidden" name="_next" value="https://tbsradial.github.io/TAGGSJURIDICO/pages/gracias.html">
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="text" name="_honey" class="campo-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -255,6 +256,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
+                                        <p class="form-estado" id="form-estado" role="alert" hidden></p>
                                         <button class="btn-enviar" type="submit">Enviar solicitud <i class="bi bi-send-fill"></i></button>
                                     </div>
                                 </div>
@@ -315,5 +317,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/formulario.js" defer></script>
 </body>
 </html>

@@ -381,6 +381,11 @@ section {
 .btn-enviar:active {
   transform: scale(0.97);
 }
+.btn-enviar:disabled {
+  opacity: 0.75;
+  cursor: wait;
+  transform: none;
+}
 @media (max-width: 575px) {
   .btn-enviar {
     width: 100%;
@@ -474,6 +479,17 @@ section {
   color: #FFFFFF;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.form-estado {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #FFFFFF;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  font-weight: 500;
 }
 
 .campo-trampa {

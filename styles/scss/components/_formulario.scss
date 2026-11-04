@@ -60,6 +60,18 @@ $halo-foco: 0 0 0 3px rgba($blanco, 0.45);
     }
 }
 
+// Mensaje de error al enviar (scripts/formulario.js)
+.form-estado {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid $blanco;
+    border-radius: 6px;
+    background-color: rgba($blanco, 0.15);
+    color: $blanco;
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+
 // Campo trampa contra bots: invisible para personas
 .campo-trampa {
     position: absolute;
